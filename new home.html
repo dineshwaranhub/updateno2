@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>housewarming</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Adjust alignment to top for more space */
+            align-items: center;
+            min-height: 120vh; /* Increased height to make the page longer */
+            background: linear-gradient(135deg, #000, #808080);
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150%; /* Increased height of background */
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(128, 128, 128, 0.5));
+            transform: rotateX(45deg);
+            animation: moveBackground 5s linear infinite alternate;
+            z-index: -1;
+        }
+
+
+        header, footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1.2em;
+            position: absolute;
+        }
+
+        header {
+            top: 0;
+        }
+
+        footer {
+            bottom: 0;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 4;
+            background: rgba(255, 255, 255, 0.8);
+            color: #000;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .back-button:hover {
+            background: #ffd700;
+            transform: scale(1.1);
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            margin-top: 80px; /* Add extra margin to push content further down */
+        }
+
+        h1 {
+            color: #FFD700; /* Yellow color */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            margin-top: 20px;
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+            color: #fff;
+            font-size: 1.2em;
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <a href="EVENTS.html" class="back-button">Back</a>
+    <div class="background"></div>
+    
+    </header>
+    <div class="container">
+        <h1>𝙃𝙤𝙪𝙨𝙚𝙬𝙖𝙧𝙢𝙞𝙣𝙜 𝙘𝙚𝙧𝙚𝙢𝙤𝙣𝙮</h1>
+        <img src="puthumani.jpg" alt="3D Image">
+        <p>In Tamil Nadu, a housewarming ceremony is called "Griha Pravesham" (கிரஹ பிரவேசம்) or "Veedu Kattuvizha" (வீடு கட்டுவிழா).</p>
+    </div>
+
+    <footer>
+        &copy; DinesH catering management system.
+    </footer>
+</body>
+</html>
