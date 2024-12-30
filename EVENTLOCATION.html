@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasonal Hover Cards</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            width: 100%;
+            background-color: gray;
+            color: rgb(225, 190, 13);
+            text-align: center;
+            padding: 10px 0;
+            font-size: 2.5em;
+            position: relative;
+        }
+
+        footer {
+            width: 100%;
+            background-color: gray;
+            color: rgb(229, 210, 9);
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            background: yellow;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+            transition: filter 0.3s ease;
+        }
+
+        .card:hover img {
+            filter: brightness(1);
+        }
+
+        .card h4 {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgb(150, 126, 126);
+            font-size: 1.2em;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            text-align: center;
+        }
+
+        .card:hover h4 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+ /* Home Button */
+ .home-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #FFCC00;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .home-btn:hover {
+      background-color: #e6b800;
+    }
+     
+    /* Logo styles */
+    .logo {
+        position: fixed;
+        bottom: 10px;  /* Moves the logo down */
+        right: 10px;   /* Moves the logo to the right side */
+        z-index: 1000;
+    }
+
+    .logo img {
+        width: 100px;
+        height: auto;
+    }
+    </style>
+</head>
+<body>
+   
+ <!-- Logo on the right corner below -->
+ <div class="logo">
+  <a href="index.html" ><img src="LOGO.png" alt="DinesH Catering Logo"></a> 
+  </div>
+
+    <header>
+        <button class="home-btn" onclick="window.location.href='index.html'">Home</button>
+        𝗘𝗩𝗘𝗡𝗧 𝐋𝐨𝐜𝐚𝐭𝐢𝐨𝐧
+        <div class="menu-bar" id="menuBar">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <div class="card-container">
+        <!-- Example cards -->
+        <div class="card-container">
+            <div class="card-container">
+                <div class="card Birthday\ Party">
+                 <a href="krishna mahal.html">   <img src="krishns.jpg" alt="Spring"></a>
+                    <h4>krishna</h4>
+                </div>
+                <div class="card Wedding">
+               <a href="mlr.html">     <img src="mlr.jpg" alt="Wedding"></a>
+                    <h4>mlr</h4>
+                </div>
+                <div class="card ValaiKappu">
+                    <a href="sri mani.html"><img src="mani.jpg" alt="ValaiKappu"></a>
+                    <h4>sri mani</h4>
+                </div>
+                <div class="card Kathukuthu">
+                    <a href="srinivasa.html"><img src="srini.jpg" alt="Kathukuthu"></a>
+                    <h4>sri Srinivasa</h4>
+                </div>
+                <div class="card Majal">
+                 <a href="chandra mahal.html">   <img src="santhira.jpg" alt="Majal"></a>
+                    <h4>chandra mahal</h4>
+                </div>
+                <div class="card Newhome">
+                   <a href="kamatchiamman mahal.html"> <img src="k amman.jpg" alt="Newhome"></a>
+                    <h4>kamatchi</h4>
+                </div>
+                <div class="card Diwali">
+                    <a href="karunambikamahal.html"><img src="karun.jpg" alt="Diwali"></a>
+                    <h4>karunambiga</h4>
+                </div>
+                <div class="card Christmas">
+                  <a href="ramakrishna.html">  <img src="ramakrishna.jpg" alt="Christmas"></a>
+                    <h4>ramakrishna</h4>
+                </div>
+                <div class="card Easter">
+                  <a href="pothigai.html">  <img src="pothigai mahal.jpg" alt="Easter"></a>
+                    <h4>pothigai</h4>
+                </div>
+                <div class="card Halloween">
+                  <a href="saravanamahal.html">  <img src="saravana.jpg" alt="Easter"></a>
+                    <h4>saravana</h4>
+                </div>
+                <div class="card NewYear">
+        <a href="ganeshmahal.html">            <img src="ganesh.jpg" alt="New Year"></a>
+                    <h4>srinivasa</h4>
+                </div>
+                <div class="card Thanksgiving">
+                  <a href="a grand mahal.html">  <img src="a grand mahal ac.jpg" alt="Thanksgiving"></a>
+                    <h4>Ta grand</h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <footer>
+        &copy; DineH catering management system.
+    </footer>
+
+    <script>
+        const menuBar = document.getElementById('menuBar');
+        const menu = document.getElementById('menu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        menuBar.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            menu.classList.remove('active');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!menu.contains(event.target) && !menuBar.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

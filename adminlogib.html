@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px; /* Adjust size of logo */
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            color: #333;
+        }
+        .input-group {
+            margin: 20px 0;
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login-btn, .register-btn {
+            background-color: #f4b400;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .login-btn:hover, .register-btn:hover {
+            background-color: #e0a800;
+        }
+        .footer-text {
+            margin-top: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+        .footer-text a {
+            color: #f4b400;
+            text-decoration: none;
+        }
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo on the left side -->
+   <a href="index.html" ><img src="LOGO.png" alt="Logo" class="logo"></a>
+    
+    <div class="login-container">
+        <h1>Admin Login</h1>
+        <form action="#" method="post">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+             <a href="admin page.html"><button type="submit" class="login-btn">Login</button></a>
+             <p> after database conected to thish page work  The page = <a href="admin page.html">click</a></p>
+        </form>
+        <p class="footer-text">Forgot your password? <a href="#">Reset it here</a></p>
+        <button class="newmahalrigistration.html" onclick="window.location.href='newmahalrigistration.html'">New Mahal Registration</button>
+    </div>
+    <footer>
+        &copy; 2024 Admin Panel. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinesH Catering Management System</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .slides {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            animation: slide-animation 12s infinite;
+        }
+
+        .hero .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes slide-animation {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            animation: blink-animation 2s infinite;
+        }
+
+        .btn:hover {
+            background-color: #ffb007;
+        }
+
+        @keyframes blink-animation {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 1rem;
+        }
+
+        .section {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .about-contact {
+            padding: 2rem 1rem;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .about-contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-contact p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials {
+            background-color: #f0f0f0;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials p {
+            font-size: 1rem;
+            color: #555;
+            font-style: italic;
+            margin: 0.5rem 0;
+        }
+
+        .faq {
+            padding: 2rem 1rem;
+            background-color: #fff;
+        }
+
+        .faq h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #ffc107;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Logo styles */
+        .logo {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1000;
+        }
+
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+
+        /* Search bar styles */
+        .search-bar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .search-bar form {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 5px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 8px;
+            font-size: 1rem;
+            flex: 1;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-bar button {
+            border: none;
+            outline: none;
+            background: #ffc107;
+            color: #333;
+            padding: 8px 15px;
+            font-size: 1rem;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-bar button:hover {
+            background: #ffb007;
+        }
+
+        /* Hamburger menu styles */
+        .hamburger-menu {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-menu button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1000;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+        }
+
+        .hamburger-menu.active .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo on the left corner -->
+    <div class="logo">
+        <img src="LOGO.png" alt="DinesH Catering Logo">
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <form action="EVENTLOCATION.html"  method="GET">
+            <input type="text" name="query" placeholder="Search..." />
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+        <button onclick="toggleMenu()">☰</button>
+        <div class="dropdown-menu">
+            <a href="repoart.html">Report</a>
+            <a href="adminlogib.html">Admin login</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="slides">
+            <img src="slydeno1.jpg" alt="Slide 1">
+            <img src="slydeno2.jpg" alt="Slide 2">
+            <img src="slydeno3.jpg" alt="Slide 3">
+            <img src="slydeno4.jpg" alt="Slide 4">
+        </div>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>DinesH Catering Management System</h1>
+            <p>Experience the finest catering for your events.</p>
+            <a href="booking .html" class="btn">Book Now</a>
+            <a href="worker.html" class="btn" style="margin-left: 1rem;">Worker Registration</a>
+        </div>
+    </div>
+
+    <div class="sections">
+        <div class="section">
+            <a href="EVENTLOCATION.html"><h2>Places</h2></a>
+            <p>We cater to a variety of venues and locations.</p>
+        </div>
+        <div class="section">
+            <a href="EVENTS.html"><h2>Functions</h2></a>
+            <p>From weddings to corporate events, we've got you covered.</p>
+        </div>
+        <div class="section">
+            <a href="FOOD LIST.html"><h2>Foods</h2></a>
+            <p>Delicious and diverse menus to suit all tastes.</p>
+        </div>
+    </div>
+
+    <div class="about-contact">
+        <h2>About Us</h2>
+        <p>DinesH Catering Management System provides premium catering services to make your events memorable. With years of experience, we ensure quality and satisfaction.</p>
+        <h2>Contact Us</h2>
+        <p>Email: dnadineshop@gmail.com</p>
+        <p>Phone: 8778177@</p>
+        <p>Address: 3/544, New Guruvayurappan Nagar, Tiruppur</p>
+    </div>
+
+    <div class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <p>"The best catering service we've ever had! Highly recommended." - John D.</p>
+        <p>"Professional, timely, and delicious! Thank you for making our event special." - Sarah L.</p>
+    </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What types of events do you cater?</h3>
+            <p>We cater weddings, corporate events, private parties, and more.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Do you provide custom menus?</h3>
+            <p>Yes, we can tailor our menu to meet your specific needs and preferences.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How far in advance should I book?</h3>
+            <p>We recommend booking at least 2-3 weeks in advance to secure your date.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 DinesH Catering Management System. All rights reserved.</p>
+        <p>Follow us: <a href="https://www.facebook.com/profile.php?id=100075174710360&mibextid=ZbWKwL">Facebook</a> 
+            | <a href="https://x.com/Dna20429469?s=09">Twitter</a> 
+            | <a href="https://www.instagram.com/im_dineshwara_n?igsh=MXV0bmp1ZHJnZ241NA==">Instagram</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.dropdown-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

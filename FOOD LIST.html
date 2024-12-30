@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu - Catering Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .menu-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item:hover {
+            background-color: #f1f1f1;
+        }
+
+        .text-section {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .text-section h3 {
+            color: #2d6a4f;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .text-section h3 a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .text-section h3 a:hover {
+            color: #1a4d32;
+            text-decoration: underline;
+        }
+
+        .text-section p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .image-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.05);
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #2d6a4f;
+            color: white;
+            border-bottom: 2px solid #e0e0e0;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        header img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        header .back-button {
+            background-color: #fff;
+            color: #2d6a4f;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        header .back-button:hover {
+            background-color: #d3d3d3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #555;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+       
+    </style>
+</head>
+<body>
+
+</div>
+    <header id="header">
+       <a href="index.html" ><button class="back-button" onclick="history.back()">Back</button></a>
+        <h1 style="margin: 0 auto; text-align: center;">FOOD LIST
+        </h1>
+       
+    </header>
+
+    <div class="menu-container">
+        <div class="menu-item">
+            <div class="text-section">
+                <h3><a href="BUFFET.html"><h1>BUFFET</h1></a></h3>
+                <p>An Indian buffet offers a variety of flavorful, colorful, and aromatic dishes that showcase the diversity of Indian cuisine. It typically includes a mix of vegetarian and non-vegetarian dishes, rice, bread, chutneys, and accompaniments. Here’s a classic Indian buffet menu that will transport you straight to an Indian dining experience.</p>
+            </div>
+            <div class="image-section">
+             <a href="buffet.html">   <img src="buffet.jpg" alt="Buffet"> </a>
+            </div>
+        </div>
+
+        <style>
+            .green-text {
+                color: #2d6a4f; /* Green color */
+            }
+        </style>
+        
+        <div class="menu-item">
+            <div class="text-section">
+                <h3><h1>BANANA LEAF SETUP</h1></h3>
+                <a href="morning.html"><h1 class="green-text">MORNING</h1></a>
+                <a href="aft.html"><h1 class="green-text">AFTERNOON</h1></a>
+                <a href="night.html"><h1 class="green-text">NIGHT</h1></a>
+                <p>Fresh and wholesome plant-based dishes that are as delicious as they are nutritious.</p>
+            </div>
+            <div class="image-section">
+                <a href=""><img src="leaf.jpg" alt="Leaf Setup"></a>
+            </div>
+        </div>
+        
+        <style>
+            .green-text {
+                color: #2d6a4f; /* Green color */
+            }
+        </style>
+        
+
+        <div class="menu-item">
+            <div class="text-section">
+                <h3><a href="nonveg.html"><H1>NON-VEG</H1></a></h3>
+                <p>Delicious meat and seafood delicacies prepared with authentic flavors.</p>
+            </div>
+            <div class="image-section">
+
+
+             <a href="nonveg.html">   <img src="nonveg.jpg" alt="Non-Vegetarian"></a>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <div class="text-section">
+               <h3 > <a href="desartandsnack.html" > <H1>DESERT AND SNACKS</H1></a></h3>   </a>         
+                <p>Delicious meat and seafood delicacies prepared with authentic flavors.</p>
+            </div>
+            <div class="image-section">
+             <a href="desartandsnack.html" >  <img src="dessert.jpg" alt="Dessert"> </a>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        &copy; DinesH Catering Management System. All rights reserved.
+    </footer>
+
+    <script>
+        // JavaScript to trigger the fade-in effect
+        document.addEventListener('DOMContentLoaded', function() {
+            var header = document.getElementById('header');
+            var footer = document.getElementById('footer');
+            setTimeout(function() {
+                header.classList.add('fade-in');
+            }, 200); // Adjust the delay as needed
+            setTimeout(function() {
+                footer.classList.add('fade-in');
+            }, 400); // Adjust the delay as needed
+        });
+    </script>
+
+</body>
+</html>

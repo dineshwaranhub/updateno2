@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering Booking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100% - 60px); /* Adjust for footer height */
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #917a1d;
+    }
+
+    .form-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      width: 100%;
+      max-width: 1000px;
+      background-color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .left-column, .right-column {
+      flex: 1;
+      margin: 0 10px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .form-group select, 
+    .form-group input {
+      width: 80%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+
+    .form-group select:focus, 
+    .form-group input:focus {
+      border-color: #FFCC00;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #333;
+      background-color: #FFCC00;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #e6b800;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 50%;
+      max-width: 600px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 15px;
+      color: #71611d;
+    }
+
+    .modal-content p {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+
+    .close-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #796723;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background-color: #e6b800;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      position: relative;
+      width: 100%;
+      bottom: 0;
+    }
+
+    /* 3D Effect */
+    .celebration-text {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ff0000;
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -1px -1px 5px rgba(0, 0, 0, 0.3);
+      transform: rotateY(10deg);
+      animation: rotateAnimation 5s ease-in-out infinite;
+    }
+
+    @keyframes rotateAnimation {
+      0% { transform: rotateY(10deg); }
+      50% { transform: rotateY(-10deg); }
+      100% { transform: rotateY(10deg); }
+    }
+
+    /* Move celebration text below header */
+    .celebration-message {
+      text-align: center;
+      margin-top: 20px;
+      display: none;
+      
+    }
+
+    /* Home Button */
+    .home-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #FFCC00;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .home-btn:hover {
+      background-color: #e6b800;
+    }
+
+    /* Logo styles */
+    .logo {
+        position: fixed;
+        bottom: 10px;  /* Moves the logo down */
+        right: 10px;   /* Moves the logo to the right side */
+        z-index: 1000;
+    }
+
+    .logo img {
+        width: 100px;
+        height: auto;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Logo on the right corner below -->
+  <div class="logo">
+   <a href="index.html" ><img src="LOGO.png" alt="DinesH Catering Logo"></a>
+  </div>
+  <button class="home-btn" onclick="window.location.href='index.html'">Home</button>
+
+  <div class="container">
+    <h1>𝗘𝗩𝗘𝗡𝗧 𝗕𝗢𝗢𝗞𝗜𝗡𝗚</h1>
+    <div id="celebration" class="celebration-message">
+      <div class="celebration-text">
+        Booking Confirmed! 🎉 Let's Celebrate!
+      </div>
+    </div>
+
+    <form id="booking-form" class="form-box">
+      <!-- Left Column -->
+      <div class="left-column">
+        <div class="form-group">
+          <label for="place">Select Place</label>
+          <select id="place" name="place" required>
+            <option value="">Select...</option>
+            <option value="KRISHNAMAHAL">KRISHNA MAHAL</option>
+            <option value="MLR MAHAL">MLR MAHAL</option>
+            <option value="SRI MANI MAHAL">SRI MANI MAHAL</option>
+            <option value="SRINIVASA MAHAL">SRINIVASA MAHAL</option>
+            <option value="KAMATCHI AMMAN THIRUMANA MAHAL">KAMATCHI AMMAN THIRUMANA MANDAPAM</option>
+            <option value="RAMAKRISHNA THIRUMANA MAHAL">RAMAKRISHNA THIRUMANA MANDAPAM</option>
+            <option value="GANESH MAHAL">GANESH MAHAL</option>
+            <option value="POTHIGAI MAHAL">POTHIGAI MAHAL</option>
+            <option value="KARUNAMBIKA MAHAL">KARUNAMBIKA MAHAL</option>
+            <option value="CHANDHIRA MAHAL">CHANDHIRA MAHAL</option>
+            <option value="A GRAND MAHAL">A GRAND MAHAL</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="event">Select Event</label>
+          <select id="event" name="event" required>
+            <option value="">Select...</option>
+            <option value="wedding">WEDDING</option>
+            <option value="PUBERTY">PUBERTY FUNCTION</option>
+            <option value="HOUS WARMING">HOUSE WARMING</option>
+            <option value="EAR-PIERCING CEREMONY">EAR-PIERCING CEREMONY</option>
+            <option value="BABY SHOWER CEREMONY">BABY SHOWER CEREMONY</option>
+            <option value="BIRTHDAY PARTY">BIRTHDAY PARTY</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Select Date</label>
+          <input type="date" id="date" name="date" class="small-input" required>
+        </div>
+
+        <div class="form-group">
+          <label for="veg-nonveg">Veg or Non-Veg</label>
+          <select id="veg-nonveg" name="veg-nonveg" class="small-input" required>
+            <option value="">Select...</option>
+            <option value="veg">Veg</option>
+            <option value="nonveg">Non-Veg</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="service-type">Select Buffet or Banana Leaf</label>
+          <select id="service-type" name="service-type" required>
+            <option value="">Select...</option>
+            <option value="buffet">Buffet</option>
+            <option value="banana-leaf">Banana Leaf</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="dessert">Do You Want snacks & Dessert?</label>
+          <select id="dessert" name="dessert" required>
+            <option value="">Select...</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="right-column">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="contact">Contact Details</label>
+          <input type="tel" id="contact" name="contact" required>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" value="Submit">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Modal -->
+  <div id="details-modal" class="modal">
+    <div class="modal-content">
+      <h2>Booking Details</h2>
+      <div id="details"></div>
+      <button class="close-btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const today = new Date();
+    const twoYearsLater = new Date();
+    twoYearsLater.setFullYear(today.getFullYear() + 2);
+
+    const todayFormatted = today.toISOString().split('T')[0];
+    const twoYearsLaterFormatted = twoYearsLater.toISOString().split('T')[0];
+
+    document.getElementById('date').setAttribute('min', todayFormatted);
+    document.getElementById('date').setAttribute('max', twoYearsLaterFormatted);
+
+    const modal = document.getElementById('details-modal');
+    const detailsBox = document.getElementById('details');
+    const celebrationMessage = document.getElementById('celebration');
+
+    document.getElementById('booking-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      detailsBox.innerHTML = '';
+
+      formData.forEach((value, key) => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`;
+        detailsBox.appendChild(paragraph);
+      });
+
+      modal.style.display = 'flex';
+    });
+
+    function closeModal() {
+      modal.style.display = 'none';
+      celebrationMessage.style.display = 'block';
+      
+      // Refresh after 4 seconds
+      setTimeout(() => {
+        location.reload();
+      }, 4000);
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; DinesH CATERING MANAGEMENT SYSTEM</p>
+  </footer>
+</body>
+</html>
